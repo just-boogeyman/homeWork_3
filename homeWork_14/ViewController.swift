@@ -34,10 +34,8 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.addSubview(textFieldName)
-        view.addSubview(textFieldSurName)
+        viewAdd()
         prepareView()
-
     }
     
     // настройка textField
@@ -61,6 +59,11 @@ class ViewController: UIViewController {
             make.width.equalTo(150)
             make.height.equalTo(40)
         }
+    }
+    
+    func viewAdd() {
+        view.addSubview(textFieldName)
+        view.addSubview(textFieldSurName)
     }
 }
 

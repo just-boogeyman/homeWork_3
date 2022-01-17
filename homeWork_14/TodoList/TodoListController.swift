@@ -18,7 +18,7 @@ class TodoListViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
     
-    var model = TaskMassage()
+//    var model = TaskMassage()
     
     let idCell = "idCell"
     
@@ -47,7 +47,6 @@ class TodoListViewController: UIViewController {
                 let allDogs = self.realm.objects(Task.self)
             }
             self.tableView.performBatchUpdates {
-                self.model.addMessage()
                 self.tableView.insertRows(at: [IndexPath(row: 0, section: 0)], with: .automatic)
             } completion: { (result) in
                 self.tableView.scrollToRow(at: IndexPath(row: 0, section: 0), at: .top, animated: true)
@@ -62,15 +61,16 @@ class TodoListViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        initialization()
+    }
+    
+    func initialization() {
         tableView.dataSource = self
         tableView.delegate = self
         self.navigationController?.navigationBar.prefersLargeTitles = true
         let search = UISearchController(searchResultsController: nil)
         search.searchResultsUpdater = self
         self.navigationItem.searchController = search
-        
-        
         let btnAdd = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addMessage))
         navigationItem.leftBarButtonItem = btnAdd
     }
@@ -79,7 +79,7 @@ class TodoListViewController: UIViewController {
     func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
         let swipeAr = UIContextualAction(style: .normal, title:"" ) { (action, view, success) in
             self.tableView.performBatchUpdates ({
-                self.model.removeMessage(indexPath: indexPath)
+//                self.model.removeMessage(indexPath: indexPath)
                 self.tableView.deleteRows(at: [indexPath], with: .automatic)
                 try! self.realm.write {
                     self.realm.delete(self.realm.objects(Task.self)[indexPath.row])   // delete task
@@ -98,15 +98,13 @@ class TodoListViewController: UIViewController {
 extension TodoListViewController: UITableViewDataSource, UITableViewDelegate {
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return model.messages.count
+        return self.realm.objects(Task.self).count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         var cell = tableView.dequeueReusableCell(withIdentifier: idCell) as! TodoTableViewCell
-        
-        let message = model.messages[indexPath.row]
-        cell.nameTaskLable.text = message.name
+        cell.nameTaskLable.text = self.realm.objects(Task.self)[indexPath.row].name
         return cell
     }
     
