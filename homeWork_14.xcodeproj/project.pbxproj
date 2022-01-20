@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		041204E0279646E000E46156 /* JsonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041204DF279646E000E46156 /* JsonViewController.swift */; };
+		041204E2279646FB00E46156 /* ApiCeller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041204E1279646FB00E46156 /* ApiCeller.swift */; };
+		041204E42796470B00E46156 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041204E32796470B00E46156 /* Model.swift */; };
+		041204E62796487600E46156 /* JsonRealm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041204E52796487600E46156 /* JsonRealm.swift */; };
 		048E6378278DC5950043499C /* TodoListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048E6377278DC5950043499C /* TodoListController.swift */; };
 		048E637A278DC64A0043499C /* TaskMassage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048E6379278DC64A0043499C /* TaskMassage.swift */; };
 		048E637C278DC74B0043499C /* TodoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048E637B278DC74B0043499C /* TodoTableViewCell.swift */; };
@@ -44,6 +48,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		041204DF279646E000E46156 /* JsonViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JsonViewController.swift; sourceTree = "<group>"; };
+		041204E1279646FB00E46156 /* ApiCeller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiCeller.swift; sourceTree = "<group>"; };
+		041204E32796470B00E46156 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
+		041204E52796487600E46156 /* JsonRealm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JsonRealm.swift; sourceTree = "<group>"; };
 		048E6377278DC5950043499C /* TodoListController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoListController.swift; sourceTree = "<group>"; };
 		048E6379278DC64A0043499C /* TaskMassage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskMassage.swift; sourceTree = "<group>"; };
 		048E637B278DC74B0043499C /* TodoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoTableViewCell.swift; sourceTree = "<group>"; };
@@ -103,6 +111,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		041204DE279646AF00E46156 /* JsonPars */ = {
+			isa = PBXGroup;
+			children = (
+				041204DF279646E000E46156 /* JsonViewController.swift */,
+				041204E1279646FB00E46156 /* ApiCeller.swift */,
+				041204E32796470B00E46156 /* Model.swift */,
+				041204E52796487600E46156 /* JsonRealm.swift */,
+			);
+			path = JsonPars;
+			sourceTree = "<group>";
+		};
 		048E6376278DC56F0043499C /* TodoList */ = {
 			isa = PBXGroup;
 			children = (
@@ -139,6 +158,7 @@
 		04F2344D278B22B700D1227F /* homeWork_14 */ = {
 			isa = PBXGroup;
 			children = (
+				041204DE279646AF00E46156 /* JsonPars */,
 				048E6376278DC56F0043499C /* TodoList */,
 				04F2344E278B22B700D1227F /* AppDelegate.swift */,
 				04F23450278B22B700D1227F /* SceneDelegate.swift */,
@@ -432,11 +452,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				041204E0279646E000E46156 /* JsonViewController.swift in Sources */,
 				04F23453278B22B700D1227F /* ViewController.swift in Sources */,
 				048E637A278DC64A0043499C /* TaskMassage.swift in Sources */,
+				041204E42796470B00E46156 /* Model.swift in Sources */,
 				04D10CC8278B39820016D48F /* FullName.swift in Sources */,
 				048E637C278DC74B0043499C /* TodoTableViewCell.swift in Sources */,
+				041204E2279646FB00E46156 /* ApiCeller.swift in Sources */,
 				04F2344F278B22B700D1227F /* AppDelegate.swift in Sources */,
+				041204E62796487600E46156 /* JsonRealm.swift in Sources */,
 				048E637E278DE1F00043499C /* TodoRealm.swift in Sources */,
 				048E6378278DC5950043499C /* TodoListController.swift in Sources */,
 				04F23451278B22B700D1227F /* SceneDelegate.swift in Sources */,
